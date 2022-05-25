@@ -6,7 +6,7 @@ namespace LosRomka\Shop\Repository;
 
 use LosRomka\Shop\Model\User;
 
-class UserRepository
+class UserRepository implements UserRepositoryInterface
 {
     private const USERS = [
         [

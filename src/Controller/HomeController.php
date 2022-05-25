@@ -8,9 +8,15 @@ use LosRomka\Shop\View\HomePage;
 
 class HomeController
 {
+    private HomePage $homePage;
+
+    public function __construct(HomePage $homePage)
+    {
+        $this->homePage = $homePage;
+    }
+
     public function showHomeAction(): string
     {
-        $view = new HomePage();
-        return $view->render();
+        return $this->homePage->render();
     }
 }

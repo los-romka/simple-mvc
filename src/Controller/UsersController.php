@@ -4,33 +4,38 @@ declare(strict_types=1);
 
 namespace LosRomka\Shop\Controller;
 
-use LosRomka\Shop\Repository\UserRepository;
+use LosRomka\Shop\Repository\UserRepositoryInterface;
 use LosRomka\Shop\View\UserPage;
 use LosRomka\Shop\View\UsersPage;
 
 class UsersController
 {
+    private UserRepositoryInterface $userRepository;
+    private UsersPage $usersPage;
+    private UserPage $userPage;
+
+    public function __construct(UserRepositoryInterface $userRepository, UsersPage $usersPage, UserPage $userPage)
+    {
+        $this->userRepository = $userRepository;
+        $this->usersPage = $usersPage;
+        $this->userPage = $userPage;
+    }
+
     public function showUsersAction(): string
     {
-        $userRepository = new UserRepository();
+        $users = $this->userRepository->findAll();
 
-        $users = $userRepository->findAll();
-
-        $view = new UsersPage();
-        return $view->render($users);
+        return $this->usersPage->render($users);
     }
 
     public function showUserAction(int $userId): string
     {
-        $userRepository = new UserRepository();
-
-        $user = $userRepository->findById($userId);
+        $user = $this->userRepository->findById($userId);
 
         if ($user === null) {
             return 'не нашли';
         }
 
-        $view = new UserPage();
-        return $view->render($user);
+        return $this->userPage->render($user);
     }
 }

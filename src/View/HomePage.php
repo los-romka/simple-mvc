@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace LosRomka\Shop\View;
 
-use LosRomka\Shop\Model\User;
 use LosRomka\Shop\Routing\UrlGenerator;
 
 class HomePage
 {
     private UrlGenerator $urlGenerator;
 
-    public function __construct()
+    public function __construct(UrlGenerator $generator)
     {
-        $this->urlGenerator = new UrlGenerator();
+        $this->urlGenerator = $generator;
     }
 
     public function render(): string

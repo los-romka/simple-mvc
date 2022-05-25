@@ -12,9 +12,9 @@ class UsersPage
 {
     private UrlGenerator $urlGenerator;
 
-    public function __construct()
+    public function __construct(UrlGenerator $generator)
     {
-        $this->urlGenerator = new UrlGenerator();
+        $this->urlGenerator = $generator;
     }
 
     /**
