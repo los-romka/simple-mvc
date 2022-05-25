@@ -20,6 +20,15 @@ class UrlGenerator
             );
     }
 
+    public function topUsers(): string
+    {
+        return '/?' . http_build_query(
+                [
+                    'action' => 'top',
+                ]
+            );
+    }
+
     public function user(int $id): string
     {
         return '/?' . http_build_query(

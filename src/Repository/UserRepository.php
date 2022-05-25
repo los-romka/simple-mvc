@@ -18,6 +18,26 @@ class UserRepository implements UserRepositoryInterface
             'id' => 2,
             'name' => 'Tasya',
             'birthdate' => '2011-01-02',
+        ],
+        [
+            'id' => 3,
+            'name' => 'Tasya',
+            'birthdate' => '2011-01-02',
+        ],
+        [
+            'id' => 4,
+            'name' => 'Tasya',
+            'birthdate' => '2011-01-02',
+        ],
+        [
+            'id' => 5,
+            'name' => 'Tasya',
+            'birthdate' => '2011-01-02',
+        ],
+        [
+            'id' => 6,
+            'name' => 'Tasya',
+            'birthdate' => '2011-01-02',
         ]
     ];
 

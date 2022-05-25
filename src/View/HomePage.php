@@ -22,6 +22,7 @@ class HomePage
         $html .= '<div>Это домашнаяя страница</div>';
 
         $html .= "<div><a href=\"{$this->urlGenerator->users()}\">К списку пользователей</a></div>";
+        $html .= "<div><a href=\"{$this->urlGenerator->topUsers()}\">Топ пользователей</a></div>";
 
         $html .= '</div>';
 
